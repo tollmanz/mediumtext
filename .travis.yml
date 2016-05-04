@@ -12,7 +12,6 @@ env:
 
 before_script:
     - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-    - php wp-cli.phar
     - mkdir -p /srv/wp
     - mysqladmin create wp --user="root" --password=""
     - php wp-cli.phar core download --version=$WP_VERSION --force --path=/srv/wp 
