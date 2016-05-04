@@ -12,8 +12,7 @@ env:
 
 before_script:
     - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-    - mkdir -p /srv/wp
     - mysqladmin create wp --user="root" --password=""
-    - php wp-cli.phar core download --version=$WP_VERSION --force --path=/srv/wp 
-    - php wp-cli.phar core config --dbname=wp dbuser=root --dbpass="" --path=/srv/wp 
-    - php wp-cli.phar core install --url=localhost --title=test --admin_user=test --admin_password=test --admin_email=fake@asfsadfasfasf.com --skip-email --path=/srv/wp
+    - php wp-cli.phar core download --version=$WP_VERSION --force
+    - php wp-cli.phar core config --dbname=wp dbuser=root --dbpass=""
+    - php wp-cli.phar core install --url=localhost --title=test --admin_user=test --admin_password=test --admin_email=fake@asfsadfasfasf.com --skip-email
