@@ -18,4 +18,4 @@ before_script:
     - php wp-cli.phar core install --url=localhost --title=test --admin_user=test --admin_password=test --admin_email=fake@asfsadfasfasf.com --skip-email
 
 script:
-    -  mysql -uroot -h localhost -e 'SHOW TABLES;' wp
+    -  mysql -uroot -h localhost -e 'SHOW FIELDS FROM wp_posts;' wp
