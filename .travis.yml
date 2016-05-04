@@ -19,9 +19,15 @@ before_script:
 
 script:
     - mysql -uroot -h localhost -e 'SHOW FIELDS FROM wp_posts;' wp
+    - mysql -uroot -h localhost -e 'SHOW FIELDS FROM wp_links;' wp
+    - mysql -uroot -h localhost -e 'SHOW FIELDS FROM wp_users;' wp
     - php wp-cli.phar core update --version=$FIRST_UPDATE_VERSION
     - php wp-cli.phar core update-db
     - mysql -uroot -h localhost -e 'SHOW FIELDS FROM wp_posts;' wp
+    - mysql -uroot -h localhost -e 'SHOW FIELDS FROM wp_links;' wp
+    - mysql -uroot -h localhost -e 'SHOW FIELDS FROM wp_users;' wp
     - php wp-cli.phar core update --version=$SECOND_UPDATE_VERSION
     - php wp-cli.phar core update-db
     - mysql -uroot -h localhost -e 'SHOW FIELDS FROM wp_posts;' wp
+    - mysql -uroot -h localhost -e 'SHOW FIELDS FROM wp_links;' wp
+    - mysql -uroot -h localhost -e 'SHOW FIELDS FROM wp_users;' wp
