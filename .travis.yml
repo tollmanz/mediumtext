@@ -16,3 +16,6 @@ before_script:
     - php wp-cli.phar core download --version=$WP_VERSION --force
     - php wp-cli.phar core config --dbname=wp --dbuser=root --dbpass=""
     - php wp-cli.phar core install --url=localhost --title=test --admin_user=test --admin_password=test --admin_email=fake@asfsadfasfasf.com --skip-email
+
+script:
+    -  mysql -uwordpress -pwordpress -h localhost -e 'SHOW TABLES;' wordpress
